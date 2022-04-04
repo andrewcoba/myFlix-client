@@ -9,13 +9,21 @@ export class MainView extends React.Component {
   constructor() {
     super();
     this.state = {
-      movies: [
-        { _id: 1, Title: 'Inception', Description: 'description', ImagePath: '...' },
-        { _id: 2, Title: 'The Shawshank Redemption', Decription: 'description', ImagePath: '...' },
-        { _id: 3, Title: 'Gladiator', Description: 'description 3', ImagePath: '...' }
-      ],
+      movies: [],
       selectedMovie: null,
     }
+  }
+
+  componentDidMount() {
+    axios.get('https://git.heroku.com/infoaboutmovies123.git/movies')
+      .then(response => {
+        this.setState({
+          movies: response.data
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
   }
 
   setSelectedMovie(newSelectedMovie) {
