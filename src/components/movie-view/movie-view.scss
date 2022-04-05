@@ -1,0 +1,36 @@
+* {
+  box-sizing: border-box;
+  font-family: "Playfair Display Regular";
+  background-color: #064074;
+  color: #f6f6f4;
+}
+
+#movie-view {
+  text-align: center;
+  min-height: auto;
+  margin-bottom: auto;
+  border-color: #c6981e;
+  border-width: 10px;
+}
+
+#movie-view-button {
+  margin: auto;
+  color: #10436a;
+  font-size: medium;
+  font-weight: 100;
+}
+
+#movie-director #movie-genre #movie-description {
+  font-size: medium;
+  font-weight: 100;
+}
+
+#movie-title {
+  text-align: center;
+  font-size: large;
+  font-weight: 200;
+}
+
+#movie-view-image {
+  margin-bottom: 20px;
+}
