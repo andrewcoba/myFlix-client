@@ -1,20 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-<<<<<<< Updated upstream
-=======
 import './movie-card.scss'
 
 import { CardGroup, Container, Button, Card } from 'react-bootstrap';
->>>>>>> Stashed changes
 
 export class MovieCard extends React.Component {
   render() {
     const { movie, onMovieClick } = this.props;
 
     return (
-<<<<<<< Updated upstream
-      <div onClick={() => onMovieClick(movie)} className="movie-card">{movie.Title}</div>
-=======
       <Container>
         <CardGroup>
           <Card id='movie-card'>
@@ -27,9 +21,8 @@ export class MovieCard extends React.Component {
           </Card>
         </CardGroup>
       </Container>
->>>>>>> Stashed changes
-    );
-  }
+    )
+  };
 }
 
 MovieCard.propTypes = {

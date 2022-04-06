@@ -1,11 +1,8 @@
 import React from 'react';
-<<<<<<< Updated upstream
-=======
 import PropTypes from 'prop-types';
-import '.movie-view.scss'
+import './movie-view.scss'
 
 import { Card, Col, Container, Row, Button } from 'react-bootstrap';
->>>>>>> Stashed changes
 
 export class MovieView extends React.Component {
 
