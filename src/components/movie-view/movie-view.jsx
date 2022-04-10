@@ -18,6 +18,7 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
+<<<<<<< Updated upstream
       <div className="movie-view">
         <div className="movie-poster">
           <img src={movie.ImagePath} />
@@ -32,6 +33,26 @@ export class MovieView extends React.Component {
         </div>
         <button onClick={() => { onBackClick(null); }}>Back</button>
       </div>
+=======
+      <Container>
+        <Row>
+          <Col>
+            <Card id='movie-view'>
+              <Card.Body>
+                <Card.Img id='movie-view-image' variant='top' src={movie.ImagePath} />
+                <Card.Title id='movie-title' className='movie-title'>{movie.title}</Card.Title>
+                <Card.Text id='movie-description' className='movie-description'>{movie.Description}</Card.Text>
+                <Card.Text id='movie-director' className='movie-director'>Director: {movie.Director.Name}</Card.Text>
+                <Card.Text id='movie-genre' className='movie-genre'>Genre: {movie.Genre.Name}</Card.Text>
+              </Card.Body>
+            </Card>
+            <Link to={`/directors/${movie.Diretor.Name}`}>
+              <Button id='movie-view-button' onClick={() => { onBackClick(null); }}>Back</Button>
+            </Link>
+          </Col>
+        </Row>
+      </Container>
+>>>>>>> Stashed changes
     );
   }
 }
