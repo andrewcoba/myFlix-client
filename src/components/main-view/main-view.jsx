@@ -1,12 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import { Col, Row, Container } from 'react-bootstrap';
+import './main-view.scss'
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
-import './main-view.scss'
+
 
 export class MainView extends React.Component {
 
@@ -31,9 +32,9 @@ export class MainView extends React.Component {
       });
   }
 
-  setSelectedMovie(newSelectedMovie) {
+  setSelectedMovie(movie) {
     this.setState({
-      selectedMovie: newSelectedMovie
+      selectedMovie: movie
     });
   }
 
@@ -54,13 +55,12 @@ export class MainView extends React.Component {
 
     if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
+    if (!register) return <RegistrationView onRegistration={(register) => this.onRegistration(register)} />;
+
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
       <Container>
-        <Row>
-          <NavbarView user={user} />
-        </Row>
         <Row className='main-view justify-content-md-center'>
           {selectedMovie
             ? (
@@ -81,5 +81,3 @@ export class MainView extends React.Component {
     );
   }
 }
-
-export default MainView;
