@@ -1,18 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './movie-card.scss'
+
+import { CardGroup, Container, Button, Card } from 'react-bootstrap';
 
 import { Link } from 'react-router-dom';
 
 export class MovieCard extends React.Component {
   render() {
-    const { movie, onMovieClick } = this.props;
+    const { movie } = this.props;
 
     return (
-<<<<<<< Updated upstream
-      <div onClick={() => onMovieClick(movie)} className="movie-card">{movie.Title}</div>
-    );
-  }
-=======
       <Container>
         <CardGroup>
           <Card id='movie-card'>
@@ -29,7 +27,6 @@ export class MovieCard extends React.Component {
       </Container>
     )
   };
->>>>>>> Stashed changes
 }
 
 MovieCard.propTypes = {
