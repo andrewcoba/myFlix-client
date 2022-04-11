@@ -1,4 +1,12 @@
 import React from 'react';
+<<<<<<< Updated upstream
+=======
+import PropTypes from 'prop-types';
+import './movie-view.scss'
+
+import { Card, Col, Container, Row, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+>>>>>>> Stashed changes
 
 export class MovieView extends React.Component {
 
@@ -42,13 +50,20 @@ export class MovieView extends React.Component {
                 <Card.Img id='movie-view-image' variant='top' src={movie.ImagePath} />
                 <Card.Title id='movie-title' className='movie-title'>{movie.title}</Card.Title>
                 <Card.Text id='movie-description' className='movie-description'>{movie.Description}</Card.Text>
-                <Card.Text id='movie-director' className='movie-director'>Director: {movie.Director.Name}</Card.Text>
-                <Card.Text id='movie-genre' className='movie-genre'>Genre: {movie.Genre.Name}</Card.Text>
+                <Link to={`/director/${movie.Director.Name}`}>
+                  <Button variant='link' id='movie-director' className='movie-director'>
+                    Director: {movie.Director.Name}
+                  </Button>
+                </Link>
+                <Link to={`/genre/${movie.Genre.Name}`}>
+                  <Button variant='link' id='movie-genre' className='movie-genre'>
+                    Genre: {movie.Genre.Name}
+                  </Button>
+                </Link>
               </Card.Body>
             </Card>
-            <Link to={`/directors/${movie.Diretor.Name}`}>
-              <Button id='movie-view-button' onClick={() => { onBackClick(null); }}>Back</Button>
-            </Link>
+            <Button id='movie-view-button' onClick={() => { onBackClick(null); }}>Back</Button>
+            <Button id='movie-view-button' onClick={() => { }}>Add to favorites</Button>
           </Col>
         </Row>
       </Container>
