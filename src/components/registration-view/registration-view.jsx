@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './registration-view.scss'
+import './registration-view.scss';
 import { Form, Button, Card, CardGroup, Container, Col, Row } from 'react-bootstrap';
 import axios from 'axios'
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState('')
 
   const [usernameErr, setUsernameErr] = useState('');
   const [passwordErr, setPasswordErr] = useState('');
-  const [emailErr, setEmailErr] = useState('');
+  const [emailErr, setEmailErr] = useState('')
 
   const validate = () => {
     let isReq = true;
@@ -58,8 +58,8 @@ export function RegistrationView(props) {
           console.log(response);
           alert('unable to register');
         });
-    }
-  };
+    };
+  }
 
   return (
     <Container id='registration-form'>
@@ -100,7 +100,7 @@ export function RegistrationView(props) {
         </Col>
       </Row>
     </Container>
-  )
+  );
 }
 
 RegistrationView.propTypes = {
@@ -110,4 +110,4 @@ RegistrationView.propTypes = {
     Email: PropTypes.string.isRequired
   }),
   onRegistration: PropTypes.func.isRequired,
-};
+}

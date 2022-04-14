@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import axios from 'axios'
 
 import { Col, Row, Container, Button } from 'react-bootstrap';
 import './main-view.scss'

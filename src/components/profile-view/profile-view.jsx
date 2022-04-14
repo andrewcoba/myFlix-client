@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container, Card, Button, Row, Col, Form, FormGroup, FormControl } from 'react-bootstrap';
-
-import axios from 'axios'
+import axios from 'axios';
 import './profile-view.scss'
 
 export class ProfileView extends React.Component {
@@ -80,7 +79,7 @@ export class ProfileView extends React.Component {
         alert('Profile update');
         window.open('/profile', '_self');
       });
-  };
+  }
 
   onRemoveFavorite = (e, movies) => {
     e.preventDefault();
@@ -249,8 +248,8 @@ export class ProfileView extends React.Component {
           </Col>
         </Row>
       </Container>
-    )
-  }
+    );
+  };
 }
 
 ProfileView.propTypes = {
@@ -270,4 +269,4 @@ ProfileView.propTypes = {
     }).isRequired,
   })).isRequired,
   onBackClick: PropTypes.func.isRequired
-};
+}
