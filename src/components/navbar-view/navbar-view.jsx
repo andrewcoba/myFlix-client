@@ -19,7 +19,5 @@ export function NavBarView({ user }) {
 
   )
 }
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
+
