@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 
-import { Col, Row, Container, Button } from 'react-bootstrap';
+import { Col, Row, Button } from 'react-bootstrap';
 import './main-view.scss'
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
