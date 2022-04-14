@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 import React from 'react';
 
 import './director-view.scss';
@@ -19,6 +17,9 @@ export class DirectorView extends React.Component {
             <Card id='director-view'>
               <Card.Body>
                 <Card.Title>{director.Name}</Card.Title>
+                <Card.Text>
+                  Bio: {director.Bio}
+                </Card.Text>
                 <Card.Text>
                   Birthday: {director.Birth}
                 </Card.Text>
@@ -40,7 +41,7 @@ export class DirectorView extends React.Component {
                     variant='top'
                     src={movie.ImagePath} />
                   <Card.Body style={{ backgroundColor: 'black' }}>
-                    <Card.Title className='movie-title'>
+                    <Card.Title className='movie_title'>
                       {movie.Title}
                     </Card.Title>
                     <Link to={`/movies/${movie._id}`}>
@@ -57,4 +58,3 @@ export class DirectorView extends React.Component {
     );
   }
 }
->>>>>>> Stashed changes

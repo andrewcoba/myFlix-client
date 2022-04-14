@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-
-import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Form, Button, Card, CardGroup, Col, Row } from 'react-bootstrap/Form';
 import { Link } from 'react-router-dom'
@@ -55,7 +53,6 @@ export function LoginView(props) {
         });
     }
   };
-
 
   return (
     <Container id='login-form'>

@@ -13,7 +13,7 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
-import { NavbarView } from '../navbar-view/navbar-view'
+import { NavBarView } from '../navbar-view/navbar-view'
 
 
 export class MainView extends React.Component {
@@ -92,7 +92,7 @@ export class MainView extends React.Component {
       <Router>
         <Button id='logout-button' onClick={() => { this.onLoggedOut() }}>Logout</Button>
         <Row>
-          <NavbarView user={user} />
+          <NavBarView user={user} />
         </Row>
 
         <Row className='main-view justify-content-md-center'>
