@@ -54,5 +54,5 @@ export class DirectorView extends React.Component {
         </Row>
       </Container>
     );
-  };
+  }
 }
