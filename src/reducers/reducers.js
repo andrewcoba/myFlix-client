@@ -1,10 +1,6 @@
 import { combineReducers } from "redux";
 
-<<<<<<< Updated upstream
-import { SET_FILTER, SET_MOVIES } from "../actions/actions";
-=======
-import { SET_FILTER } from "../actions/actions";
->>>>>>> Stashed changes
+import { SET_FILTER, SET_MOVIES, SET_USER } from "../actions/actions";
 
 function visibilityFilter(state = '', action) {
   switch (action.type) {
@@ -13,12 +9,20 @@ function visibilityFilter(state = '', action) {
     default:
       return state;
   }
-<<<<<<< Updated upstream
 }
 
 function movies(state = [], action) {
   switch (action.type) {
     case SET_MOVIES:
+      return action.value;
+    default:
+      return state;
+  }
+}
+
+function user(state = '', action) {
+  switch (action.type) {
+    case SET_USER:
       return action.value;
     default:
       return state;
@@ -31,6 +35,3 @@ const moviesApp = combineReducers({
 });
 
 export default moviesApp;
-=======
-}
->>>>>>> Stashed changes

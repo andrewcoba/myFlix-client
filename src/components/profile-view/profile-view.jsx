@@ -4,6 +4,10 @@ import { Container, Card, Button, Row, Col, Form, FormGroup, FormControl } from 
 import axios from 'axios';
 import './profile-view.scss'
 
+import { setUser } from '../../actions/actions';
+
+import { connect } from 'react-redux';
+
 export class ProfileView extends React.Component {
   constructor() {
     super();
@@ -81,7 +85,7 @@ export class ProfileView extends React.Component {
       });
   }
 
-  onRemoveFavorite = (e, movies) => {
+  onRemoveFavorite = (e, movie) => {
     e.preventDefault();
     const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
@@ -183,6 +187,18 @@ export class ProfileView extends React.Component {
                   </FormGroup>
 
                   <FormGroup>
+                    <Form.Label>Password</Form.Label>
+                    <FormControl
+                      type='password'
+                      name='Password'
+                      placeholder='New Password'
+                      value=''
+                      onChange={(e) => this.setPassword(e.target.value)}
+                      required
+                    />
+                  </FormGroup>
+
+                  <FormGroup>
                     <Form.Label>Email</Form.Label>
                     <FormControl
                       type='email'
@@ -269,4 +285,10 @@ ProfileView.propTypes = {
     }).isRequired,
   })).isRequired,
   onBackClick: PropTypes.func.isRequired
+};
+
+let mapStateToProps = state => {
+  return { movies: state.movies, user: state.user }
 }
+
+export default connect(mapStateToProps, { setUser })(ProfileView);
