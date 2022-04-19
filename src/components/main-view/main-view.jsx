@@ -134,7 +134,7 @@ export class MainView extends React.Component {
               );
             }
 
-            if (movies.lenth === 0) {
+            if (movies.length === 0) {
               return <div className='movie-view' />;
             }
 

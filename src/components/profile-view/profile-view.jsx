@@ -34,16 +34,17 @@ export class ProfileView extends React.Component {
   getUser(token) {
     const Username = localStorage.getItem('user');
 
-    axios.get(`https://infoaboutmovies123.herokuapp.com/users/${Username}`, {
+    axios.get("https://infoaboutmovies123.herokuapp.com/users/", {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
+        const user = response.data.find(user => user.Username == Username);
         this.setState({
-          Username: response.data.Username,
-          Password: response.data.Password,
-          Email: response.data.Email,
-          Birthday: response.data.Birthday,
-          FavoriteMovies: response.data.FavoriteMovies
+          Username: user.Username,
+          Password: user.Password,
+          Email: user.Email,
+          Birthday: user.Birthday,
+          FavoriteMovies: user.FavoriteMovies
         });
       })
       .catch(function (error) {
@@ -205,8 +206,8 @@ export class ProfileView extends React.Component {
                     />
                   </FormGroup>
                   <div>
-                    <Button variant='success' type='submit' onClick={this.editUser}>Update Data</Button>
-                    <Button variant='secondary' onClick={() => this.onDeleteUser()}>Delete Profile</Button>
+                    <Button variant='success' className="m-1" type='submit' onClick={this.editUser}>Update Data</Button>
+                    <Button variant='secondary' className="m-1"  onClick={() => this.onDeleteUser()}>Delete Profile</Button>
                   </div>
                 </Form>
               </Card.Body>
@@ -264,7 +265,7 @@ ProfileView.propTypes = {
     Director: PropTypes.shape({
       Bio: PropTypes.string.isRequired,
       Birth: PropTypes.string.isRequired,
-      Death: PropTypes.string.isRequired,
+      Death: PropTypes.string,
       Name: PropTypes.string.isRequired,
     }).isRequired,
   })).isRequired,

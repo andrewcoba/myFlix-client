@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { Form, Button, Card, CardGroup, Col, Row } from 'react-bootstrap/Form';
+import { Container, Form, Button, Card, CardGroup, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './login-view.scss';
 import axios from 'axios'
@@ -71,14 +71,16 @@ export function LoginView(props) {
                     <Form.Control type='password' value={password} onChange={e => setPassword(e.target.value)} />
                     {passwordErr && <p>{passwordErr}</p>}
                   </Form.Group>
-                  <Button id='login-button' variant='primary' type='submit' onClick={handleSubmit}>Login</Button>
+                {/* <Card.Text>Not registered yet</Card.Text> */}
+                  <div id='register-container'>
+                  Not registered yet? 
+                    <Link to='/register' className='card-link'>
+                      <Button id='link-to-register-button' className='ml-2' variant="outline-dark" size="sm">Register now</Button>
+                    </Link>
+                  </div>
+                  <Button id='login-button' className="btn-lg btn-block font-weight-bold text-light" variant='primary' type='submit' onClick={handleSubmit}>Login</Button>
                 </Form>
-                <Card.Text>Not registered yet</Card.Text>
-                <div id='register-container'>
-                  <Link to='/register'>
-                    <Button id='link-to-register-button'>Register now</Button>
-                  </Link>
-                </div>
+
               </Card.Body>
             </Card>
           </CardGroup>
