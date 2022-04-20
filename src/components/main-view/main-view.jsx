@@ -57,7 +57,7 @@ export class MainView extends React.Component {
     this.setState({
       user: authData.user.Username
     });
-
+    localStorage.clear();
     localStorage.setItem('token', authData.token);
     localStorage.setItem('user', authData.user.Username);
     this.getMovies(authData.token);
@@ -134,7 +134,7 @@ export class MainView extends React.Component {
               );
             }
 
-            if (movies.lenth === 0) {
+            if (movies.length === 0) {
               return <div className='movie-view' />;
             }
 
