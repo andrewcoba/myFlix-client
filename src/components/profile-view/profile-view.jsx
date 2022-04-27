@@ -38,12 +38,13 @@ export class ProfileView extends React.Component {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(response => {
+        const user = response.data.find(user => user.Username == Username);
         this.setState({
-          Username: response.data.Username,
-          Password: response.data.Password,
-          Email: response.data.Email,
-          Birthday: response.data.Birthday,
-          FavoriteMovies: response.data.FavoriteMovies
+          Username: user.Username,
+          Password: user.Password,
+          Email: user.Email,
+          Birthday: user.Birthday,
+          FavoriteMovies: user.FavoriteMovies
         });
       })
       .catch(function (error) {
@@ -81,7 +82,8 @@ export class ProfileView extends React.Component {
       });
   }
 
-  onRemoveFavorite = (e, movies) => {
+  //movies. I had "movies" along with "e" in parentheses below, but it wasn't being targeted so I removed it. Also, I don't even know what the "e" does. I'm guessing shorthand for "onRemoveFavorite"
+  onRemoveFavorite = (e) => {
     e.preventDefault();
     const Username = localStorage.getItem('user');
     const token = localStorage.getItem('token');
@@ -144,6 +146,7 @@ export class ProfileView extends React.Component {
   }
 
   render() {
+    //Wondering if I should delete onBackClick
     const { movies, onBackClick } = this.props;
     const { FavoriteMovies, Username, Email, Birthday } = this.state;
 
